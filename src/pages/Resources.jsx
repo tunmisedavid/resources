@@ -25,18 +25,13 @@ import Bg5 from "../assets/Vector-5.svg";
 import Bg6 from "../assets/Vector-6.svg";
 
 const Resources = () => {
-
   return (
     <Box
       as={"section"}
       fontFamily={"Poppins"}
       marginBottom={{ base: "60px", lg: "100px" }}
     >
-      <Box
-        m={"auto"}
-        marginTop={{ base: "10", lg: "20" }}
-        w={{ base: "310px", md: "740px", lg: "1000px", xl: "1100px" }}
-      >
+      <Box m={"auto"} marginTop={{ base: "10", lg: "20" }} maxWidth={"1200px"}>
         <Box margin={"auto"} maxWidth={"750px"}>
           <Text
             color={"#2C3237"}
@@ -48,20 +43,25 @@ const Resources = () => {
             Resources
           </Text>
           <Text
-            maxW={"620px"}
+            maxW={"640px"}
             margin={"auto"}
-            marginTop={{ lg: "3" }}
+            width={{ base: "290px", lg: "100%" }}
+            marginTop={{ lg: "3px" }}
             textAlign={"center"}
             color={"#2C3237"}
             fontFamily={"Inter"}
             fontWeight={"medium"}
-            fontSize={{ base: "16px", lg: "18px" }}
+            fontSize={{ base: "15px", lg: "18px" }}
           >
             Consectetur adipiscing elit duis tristique sollicitudin nibh sit
             amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus
             vitae congue
           </Text>
           <InputGroup
+            m={"auto"}
+            display={'flex'}
+            alignItems={'center'}
+            width={"80%"}
             marginTop={{ base: "8", lg: "10" }}
             startElement={<LuSearch />}
           >
@@ -121,13 +121,18 @@ const Resources = () => {
               </Text>
             </Flex>
           </Box>
-          <Box marginTop={{ base: "35px", md: "50px", lg: "0" }}>
+          <Box
+            margin={"auto"}
+            marginTop={{ base: "35px", md: "50px", lg: "0" }}
+            width={{ base: "90%", lg: "80%" }}
+          >
             <Grid
               templateColumns={{ lg: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
               placeItems={{ base: "center" }}
+              w={"100%"}
               gap={4}
             >
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage1}
                   title="The ultimate guide to Workplace Chat"
@@ -142,7 +147,7 @@ const Resources = () => {
                   borderTopRightRadius={20}
                 />
               </Box>
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage1}
                   title="The ultimate guide to Workplace Chat"
@@ -158,7 +163,7 @@ const Resources = () => {
                   borderTopLeftRadius={20}
                 />
               </Box>
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage2}
                   title="The ultimate guide to Workplace Chat"
@@ -173,7 +178,7 @@ const Resources = () => {
                   borderTopRightRadius={20}
                 />
               </Box>
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage2}
                   title="The ultimate guide to Workplace Chat"
@@ -189,7 +194,7 @@ const Resources = () => {
                   borderTopLeftRadius={20}
                 />
               </Box>
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage3}
                   title="The ultimate guide to Workplace Chat"
@@ -205,7 +210,7 @@ const Resources = () => {
                   borderTopLeftRadius={20}
                 />
               </Box>
-              <Box position={"relative"}>
+              <Box position={"relative"} w={"100%"} margin={"auto"}>
                 <GridcardsInner
                   image={CardImage3}
                   title="The ultimate guide to Workplace Chat"

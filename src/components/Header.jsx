@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Flex, Box, Text, Switch, Image, Link } from "@chakra-ui/react";
 import { motion } from "motion/react";
@@ -14,14 +14,22 @@ const MotionBox = motion.create(Box);
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false);
+  useEffect(() => {
+    if(openNav) {
+      document.body.style.overflow = "hidden";
+    } else{
+      document.body.style.overflow = "auto";
+    }
+    return () => document.body.overflow = 'auto'
+  }, [openNav]);
 
   const handleNav = () => {
     setOpenNav(!openNav);
   };
 
   const pages = [
-    { page: "Dashboard", path: "/" },
-    { page: "Resources", path: "/resources" },
+    { page: "Dashboard", path: "/dashboard" },
+    { page: "Resources", path: "/landing" },
     { page: "Toolkit", path: "/toolkit" },
   ];
 
@@ -37,7 +45,8 @@ const Header = () => {
       alignItems="centre"
     >
       <Flex
-        w={{ base: "310px", md: "740px", lg: "1000px", xl: "1200px" }}
+        width={'90%'}
+        maxWidth={'1280px'}
         m="auto"
         display="flex"
         alignItems="items-center"
@@ -144,7 +153,7 @@ const Header = () => {
             </Box>
           </Flex>
           <Flex display={{ lg: "none"}} cursor="pointer" onClick={handleNav}>
-            <Box zIndex={20} fontSize={30} color="#3C3C3C">
+            <Box zIndex={30} position={"relative"} fontSize={30} color="#3C3C3C">
               {!openNav ? <IoIosMenu /> : <MdOutlineClose />}
             </Box>
           </Flex>
@@ -180,6 +189,7 @@ const Header = () => {
             </Link>
           ))}
         </Box>
+        {openNav && <Box onClick={handleNav} position={'fixed'} left={0} right={0} top={200} height={'100%'} backgroundColor={'transparent'} zIndex={40}></Box> }
       </Flex>
     </Box>
   );
