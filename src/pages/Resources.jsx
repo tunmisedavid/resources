@@ -8,6 +8,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+import { useDarkMode } from "../components/DarkModeContext";
+
 import { LuSearch } from "react-icons/lu";
 import { IoFilterSharp } from "react-icons/io5";
 
@@ -25,16 +27,20 @@ import Bg5 from "../assets/Vector-5.svg";
 import Bg6 from "../assets/Vector-6.svg";
 
 const Resources = () => {
+    const {isDark}  = useDarkMode();
+  
   return (
     <Box
       as={"section"}
       fontFamily={"Poppins"}
-      marginBottom={{ base: "60px", lg: "100px" }}
+      backgroundColor={isDark ? "black" : ""}
+      paddingTop={{ base: "60px", lg: "100px" }}
+      paddingBottom={{ base: "90px", lg: "120px" }}
     >
       <Box m={"auto"} marginTop={{ base: "10", lg: "20" }} maxWidth={"1250px"}>
         <Box margin={"auto"} maxWidth={"750px"}>
           <Text
-            color={"#2C3237"}
+            color={isDark ? "white" : "#2C3237"}
             fontFamily={"Poppins"}
             fontWeight={"bold"}
             textAlign={"center"}
@@ -48,9 +54,9 @@ const Resources = () => {
             width={{ base: "290px", lg: "100%" }}
             marginTop={{ lg: "3px" }}
             textAlign={"center"}
-            color={"#2C3237"}
+            color={isDark ? "white" : "#2C3237"}
             fontFamily={"Inter"}
-            fontWeight={"medium"}
+            fontWeight={"normal"}
             fontSize={{ base: "15px", lg: "18px" }}
           >
             Consectetur adipiscing elit duis tristique sollicitudin nibh sit
@@ -66,6 +72,9 @@ const Resources = () => {
             startElement={<LuSearch />}
           >
             <Input
+              _focus={{
+                outline: "none",
+              }}
               placeholder="Search by title or keywords"
               fontFamily={"Inter"}
               fontSize={{ base: "14px", lg: "16px" }}
@@ -88,8 +97,15 @@ const Resources = () => {
             height={10}
             display={{ base: "flex", lg: "none" }}
           >
-            <IoFilterSharp style={{ fontSize: "25px", fontWeight: "bolder" }} />
-            <Text fontWeight={"medium"} fontFamily={"Poppins"}>
+            <IoFilterSharp
+              color={isDark ? "white" : ""}
+              style={{ fontSize: "25px", fontWeight: "bolder" }}
+            />
+            <Text
+              color={isDark ? "white" : ""}
+              fontWeight={"medium"}
+              fontFamily={"Poppins"}
+            >
               Show Filters
             </Text>
           </Flex>
@@ -102,7 +118,7 @@ const Resources = () => {
           marginTop={20}
           fontFamily={"Inter"}
           fontWeight={"bold"}
-          color={"#3F3F3F"}
+          color={isDark ? "white" : "#3F3F3F"}
         >
           Filters
         </Text>
@@ -152,7 +168,7 @@ const Resources = () => {
                 </Box>
                 <Box position={"relative"} w={"100%"} margin={"auto"}>
                   <GridcardsInner
-                    image={CardImage1}
+                    image={CardImage2}
                     title="The ultimate guide to Workplace Chat"
                     info="Sample Topic"
                     filterCheck="Wellbeing"
@@ -168,7 +184,7 @@ const Resources = () => {
                 </Box>
                 <Box position={"relative"} w={"100%"} margin={"auto"}>
                   <GridcardsInner
-                    image={CardImage2}
+                    image={CardImage1}
                     title="The ultimate guide to Workplace Chat"
                     info="Sample Topic"
                     filterCheck="Sense of Appreciation"

@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 import { IoIosMenu } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
 
+import { useDarkMode } from "./DarkModeContext";
+
 import Logo from "../assets/Asset 2 1.svg";
 import Dropdown from "../assets/icon_arrow.svg";
 
@@ -14,13 +16,15 @@ const MotionBox = motion.create(Box);
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false);
+  const {isDark, toggleTheme}  = useDarkMode();
+
   useEffect(() => {
-    if(openNav) {
+    if (openNav) {
       document.body.style.overflow = "hidden";
-    } else{
+    } else {
       document.body.style.overflow = "auto";
     }
-    return () => document.body.overflow = 'auto'
+    return () => (document.body.overflow = "auto");
   }, [openNav]);
 
   const handleNav = () => {
@@ -40,13 +44,19 @@ const Header = () => {
       as="section"
       fontFamily="Poppins"
       height="60px"
-      boxShadow="sm"
+      boxShadow="0px 4px 6px rgba(0, 0, 0, 0.1)"
+      position={"fixed"}
+      left={0}
+      top={0}
+      right={0}
+      backgroundColor={isDark ? "black" : "white"}
+      zIndex={30}
       display="flex"
       alignItems="centre"
     >
       <Flex
-        width={'90%'}
-        maxWidth={'1280px'}
+        width={"90%"}
+        maxWidth={"1280px"}
         m="auto"
         display="flex"
         alignItems="items-center"
@@ -61,7 +71,7 @@ const Header = () => {
               width={{ base: "28px", lg: "30px" }}
             />
             <Text
-              color="#404040"
+              color={isDark ? "white" : "#404040"}
               fontFamily="Inter"
               fontWeight="extrabold"
               fontSize={{ base: "18px", md: "23px" }}
@@ -107,15 +117,20 @@ const Header = () => {
             ))}
           </Flex>
         </Flex>
-        <Flex gap={{base: "10px", lg: "15px"}} alignItems="center">
+        <Flex gap={{ base: "10px", lg: "15px" }} alignItems="center">
           <Switch.Root>
             <Switch.HiddenInput />
-            <Switch.Control bg="#314EF9" _checked={{ bg: "black" }} />
+            <Switch.Control
+              onClick={toggleTheme}
+              bg="#314EF9"
+              _checked={{ bg: "black" }}
+            />
             <Switch.Label
               fontFamily="Poppins"
               fontWeight="semibold"
               fontSize="14px"
               display={{ base: "none", lg: "block" }}
+              color={isDark ? "#2C3237" : "black"}
             >
               Switch to Employee
             </Switch.Label>
@@ -152,8 +167,13 @@ const Header = () => {
               </Box>
             </Box>
           </Flex>
-          <Flex display={{ lg: "none"}} cursor="pointer" onClick={handleNav}>
-            <Box zIndex={30} position={"relative"} fontSize={30} color="#3C3C3C">
+          <Flex display={{ lg: "none" }} cursor="pointer" onClick={handleNav}>
+            <Box
+              zIndex={30}
+              position={"relative"}
+              fontSize={30}
+              color="#3C3C3C"
+            >
               {!openNav ? <IoIosMenu /> : <MdOutlineClose />}
             </Box>
           </Flex>
@@ -189,7 +209,18 @@ const Header = () => {
             </Link>
           ))}
         </Box>
-        {openNav && <Box onClick={handleNav} position={'fixed'} left={0} right={0} top={200} height={'100%'} backgroundColor={'transparent'} zIndex={40}></Box> }
+        {openNav && (
+          <Box
+            onClick={handleNav}
+            position={"fixed"}
+            left={0}
+            right={0}
+            top={200}
+            height={"100%"}
+            backgroundColor={"transparent"}
+            zIndex={40}
+          ></Box>
+        )}
       </Flex>
     </Box>
   );

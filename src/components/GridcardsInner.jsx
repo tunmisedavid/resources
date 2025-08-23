@@ -1,17 +1,31 @@
-import { Button, Card, Image } from '@chakra-ui/react'
+import { Button, Card, Image } from '@chakra-ui/react';
+import { useDarkMode } from './DarkModeContext';
 
 const GridcardsInner = ({image, title, info, filterCheck}) => {
+      const {isDark} = useDarkMode();
+  
   return (
     <>
-      <Card.Root shadowColor={"#F2F2F2"} rounded={20} height={290}>
+      <Card.Root
+        bg={isDark ? "black" : "white"}
+        shadowColor={"#F2F2F2"}
+        rounded={20}
+        height={290}
+      >
         <Card.Body>
-          <Image src={image} width={33} zIndex={20} marginTop={'25px'} />
+          <Image
+            backgroundColor={isDark ? "white" : "transparent"}
+            src={image}
+            width={33}
+            zIndex={20}
+            marginTop={"25px"}
+          />
           <Card.Title
-            marginTop={'40px'}
+            marginTop={"40px"}
             fontFamily={"Poppins"}
             fontWeight={"bold"}
             fontSize={{ base: "22px", lg: "18px" }}
-            color={"#2C3237"}
+            color={isDark ? "white" : "#2C3237"}
           >
             {title}
           </Card.Title>
@@ -19,7 +33,7 @@ const GridcardsInner = ({image, title, info, filterCheck}) => {
             marginTop={4}
             fontFamily={"Poppins"}
             fontWeight={"normal"}
-            color={"#828282"}
+            color={isDark ? "white" : "#828282"}
           >
             {info}
           </Card.Description>

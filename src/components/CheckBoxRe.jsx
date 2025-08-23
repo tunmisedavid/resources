@@ -1,6 +1,8 @@
 import { Checkbox } from "@chakra-ui/react";
+import { useDarkMode } from "./DarkModeContext";
 
 const CheckBoxRe = ({label}) => {
+    const {isDark} = useDarkMode();
   return (
     <>
       <Checkbox.Root variant={"solid"}>
@@ -10,7 +12,7 @@ const CheckBoxRe = ({label}) => {
           fontSize={{ babe: "14px", lg: "16px" }}
           paddingLeft={{ lg: 2}}
           fontWeight={"normal"}
-          color={"#3F3F3F"}
+          color={isDark ? "white" : "#3F3F3F"}
           fontFamily={"Inter"}
         >
           {label}

@@ -7,13 +7,16 @@ import { system } from "@chakra-ui/react/preset";
 
 import "./index.css";
 import App from "./App.jsx";
+import { DarkModeProvider } from "./components/DarkModeContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-    <ChakraProvider value={system}>
-      <App />
-    </ChakraProvider>
+      <ChakraProvider value={system}>
+        <DarkModeProvider>
+          <App />
+        </DarkModeProvider>
+      </ChakraProvider>
     </BrowserRouter>
   </StrictMode>
 );

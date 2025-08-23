@@ -1,13 +1,16 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import { CheckBoxRe } from ".";
+import { useDarkMode } from "./DarkModeContext";
 
 const SideCheckbox = () => {
+  const { isDark } = useDarkMode();
+
   return (
-    <Flex flexDir={'column'} gapY={8}>
+    <Flex flexDir={"column"} gapY={8}>
       <Box>
         <Text
-          marginBottom={'4'}
-          color={"#3F3F3F"}
+          marginBottom={"4"}
+          color={isDark ? "white" : "#3F3F3F"}
           fontSize={{ base: "14px", lg: "16px" }}
           fontWeight={"bold"}
           fontFamily={"Inter"}
@@ -24,8 +27,8 @@ const SideCheckbox = () => {
       </Box>
       <Box>
         <Text
-          marginBottom={'4'}
-          color={"#3F3F3F"}
+          marginBottom={"4"}
+          color={isDark ? "white" : "#3F3F3F"}
           fontSize={{ base: "14px", lg: "16px" }}
           fontWeight={"bold"}
           fontFamily={"Inter"}
@@ -41,8 +44,8 @@ const SideCheckbox = () => {
       </Box>
       <Box>
         <Text
-          marginBottom={'4'}
-          color={"#3F3F3F"}
+          marginBottom={"4"}
+          color={isDark ? "white" : "#3F3F3F"}
           fontSize={{ base: "14px", lg: "16px" }}
           fontWeight={"bold"}
           fontFamily={"Inter"}

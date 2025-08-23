@@ -1,9 +1,10 @@
+import { Box, Flex } from "@chakra-ui/react"
 
 const Dashboard = () => {
   return (
-    <div>
+    <Flex alignItems={'center'} justifyContent={'center'} height={'100vh'}>
       dashboard
-    </div>
+    </Flex>
   )
 }
 

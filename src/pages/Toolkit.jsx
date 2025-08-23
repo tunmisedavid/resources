@@ -1,10 +1,10 @@
-
+import { Flex } from "@chakra-ui/react";
 const Toolkit = () => {
   return (
-    <div>
-      toolkit
-    </div>
-  )
-}
+    <Flex alignItems={"center"} justifyContent={"center"} height={"100vh"}>
+      Toolkit
+    </Flex>
+  );
+};
 
-export default Toolkit
+export default Toolkit;
