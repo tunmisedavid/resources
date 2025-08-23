@@ -1,0 +1,231 @@
+import {
+  Box,
+  Flex,
+  Grid,
+  Input,
+  InputGroup,
+  Text,
+  Image,
+} from "@chakra-ui/react";
+
+import { LuSearch } from "react-icons/lu";
+import { IoFilterSharp } from "react-icons/io5";
+
+import { GridcardsInner, SideCheckbox } from "../components";
+
+import CardImage1 from "../assets/card-1.svg";
+import CardImage2 from "../assets/card-2.svg";
+import CardImage3 from "../assets/card-3.svg";
+
+import Bg1 from "../assets/Vector-1.svg";
+import Bg2 from "../assets/Vector-2.svg";
+import Bg3 from "../assets/Vector-3.svg";
+import Bg4 from "../assets/Vector-4.svg";
+import Bg5 from "../assets/Vector-5.svg";
+import Bg6 from "../assets/Vector-6.svg";
+
+const Resources = () => {
+
+  return (
+    <Box
+      as={"section"}
+      fontFamily={"Poppins"}
+      marginBottom={{ base: "60px", lg: "100px" }}
+    >
+      <Box
+        m={"auto"}
+        marginTop={{ base: "10", lg: "20" }}
+        w={{ base: "310px", md: "740px", lg: "1000px", xl: "1100px" }}
+      >
+        <Box margin={"auto"} maxWidth={"750px"}>
+          <Text
+            color={"#2C3237"}
+            fontFamily={"Poppins"}
+            fontWeight={"bold"}
+            textAlign={"center"}
+            fontSize={{ base: "40px", lg: "52px" }}
+          >
+            Resources
+          </Text>
+          <Text
+            maxW={"620px"}
+            margin={"auto"}
+            marginTop={{ lg: "3" }}
+            textAlign={"center"}
+            color={"#2C3237"}
+            fontFamily={"Inter"}
+            fontWeight={"medium"}
+            fontSize={{ base: "16px", lg: "18px" }}
+          >
+            Consectetur adipiscing elit duis tristique sollicitudin nibh sit
+            amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus
+            vitae congue
+          </Text>
+          <InputGroup
+            marginTop={{ base: "8", lg: "10" }}
+            startElement={<LuSearch />}
+          >
+            <Input
+              placeholder="Search by title or keywords"
+              fontFamily={"Inter"}
+              fontSize={{ base: "14px", lg: "16px" }}
+              fontWeight={"normal"}
+              color={"#4F4F4F"}
+            />
+          </InputGroup>
+        </Box>
+        <Text
+          display={{ base: "none", lg: "block" }}
+          paddingLeft={5}
+          marginTop={20}
+          fontFamily={"Inter"}
+          fontWeight={"bold"}
+          color={"#3F3F3F"}
+        >
+          Filters
+        </Text>
+        <Flex
+          justifyContent={"space-between"}
+          flexDirection={{ base: "column", lg: "row" }}
+          gap={10}
+          marginTop={{ base: "60px", md: "70px", lg: "20px" }}
+          position={"relative"}
+        >
+          <Box>
+            <Box
+              display={{ base: "none", lg: "block" }}
+              width={258}
+              padding={5}
+              borderTopWidth={1}
+              borderTopColor={"#E0E0E0"}
+            >
+              <SideCheckbox />
+            </Box>
+            <Flex
+              alignItems={"center "}
+              justify={"center"}
+              gap={4}
+              backgroundColor={"#F2F2F2"}
+              color={"#3F3F3F"}
+              position={"absolute"}
+              left={0}
+              right={0}
+              height={10}
+              display={{ base: "flex", lg: "none" }}
+            >
+              <IoFilterSharp
+                style={{ fontSize: "25px", fontWeight: "bolder" }}
+              />
+              <Text fontWeight={"medium"} fontFamily={"Poppins"}>
+                Show Filters
+              </Text>
+            </Flex>
+          </Box>
+          <Box marginTop={{ base: "35px", md: "50px", lg: "0" }}>
+            <Grid
+              templateColumns={{ lg: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }}
+              placeItems={{ base: "center" }}
+              gap={4}
+            >
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage1}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Secure Base"
+                />
+                <Image
+                  src={Bg1}
+                  position={"absolute"}
+                  right={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                />
+              </Box>
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage1}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Wellbeing"
+                />
+                <Image
+                  src={Bg2}
+                  position={"absolute"}
+                  left={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                  borderTopLeftRadius={20}
+                />
+              </Box>
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage2}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Sense of Appreciation"
+                />
+                <Image
+                  src={Bg3}
+                  position={"absolute"}
+                  right={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                />
+              </Box>
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage2}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Secure Base"
+                />
+                <Image
+                  src={Bg4}
+                  position={"absolute"}
+                  left={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                  borderTopLeftRadius={20}
+                />
+              </Box>
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage3}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Learning Organisation"
+                />
+                <Image
+                  src={Bg5}
+                  position={"absolute"}
+                  left={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                  borderTopLeftRadius={20}
+                />
+              </Box>
+              <Box position={"relative"}>
+                <GridcardsInner
+                  image={CardImage3}
+                  title="The ultimate guide to Workplace Chat"
+                  info="Sample Topic"
+                  filterCheck="Mission and Vision"
+                />
+                <Image
+                  src={Bg6}
+                  position={"absolute"}
+                  right={0}
+                  top={0}
+                  borderTopRightRadius={20}
+                />
+              </Box>
+            </Grid>
+          </Box>
+        </Flex>
+      </Box>
+    </Box>
+  );
+};
+
+export default Resources;
