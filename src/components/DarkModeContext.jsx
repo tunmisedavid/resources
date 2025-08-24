@@ -7,7 +7,7 @@ export const DarkModeProvider = ({ children }) => {
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  const [isDark, setIsDark] = useState(prefersDark);
+  const [isDark, setIsDark] = useState(!prefersDark);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");

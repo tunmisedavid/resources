@@ -123,7 +123,7 @@ const Header = () => {
             <Switch.Control
               onClick={toggleTheme}
               bg="#314EF9"
-              _checked={{ bg: "black" }}
+              _checked={{ bg: "black"}}
             />
             <Switch.Label
               fontFamily="Poppins"
