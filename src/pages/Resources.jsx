@@ -15,16 +15,16 @@ import { IoFilterSharp } from "react-icons/io5";
 
 import { GridcardsInner, SideCheckbox } from "../components";
 
-import CardImage1 from "../assets/card-1.svg";
-import CardImage2 from "../assets/card-2.svg";
-import CardImage3 from "../assets/card-3.svg";
+import CardImage1 from "../assets/Vector-i.png";
+import CardImage2 from "../assets/Vector-ii.png";
+import CardImage3 from "../assets/Vector-iii.png";
 
-import Bg1 from "../assets/Vector-1.svg";
-import Bg2 from "../assets/Vector-2.svg";
-import Bg3 from "../assets/Vector-3.svg";
-import Bg4 from "../assets/Vector-4.svg";
-import Bg5 from "../assets/Vector-5.svg";
-import Bg6 from "../assets/Vector-6.svg";
+import Bg1 from "../assets/bg-i.png";
+import Bg2 from "../assets/bg-ii.png";
+import Bg3 from "../assets/bg-iii.png";
+import Bg4 from "../assets/bg-iv.png";
+import Bg5 from "../assets/bg-v.png";
+import Bg6 from "../assets/bg-vi.png";
 
 const Resources = () => {
     const {isDark}  = useDarkMode();

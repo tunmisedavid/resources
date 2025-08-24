@@ -9,7 +9,7 @@ import { MdOutlineClose } from "react-icons/md";
 
 import { useDarkMode } from "./DarkModeContext";
 
-import Logo from "../assets/Asset 2 1.svg";
+import Logo from "../assets/logo-i.png";
 import Dropdown from "../assets/icon_arrow.svg";
 
 const MotionBox = motion.create(Box);

@@ -26,6 +26,7 @@ const GridcardsInner = ({image, title, info, filterCheck}) => {
             fontWeight={"bold"}
             fontSize={{ base: "22px", lg: "18px" }}
             color={isDark ? "white" : "#2C3237"}
+            zIndex={20}
           >
             {title}
           </Card.Title>
@@ -33,6 +34,7 @@ const GridcardsInner = ({image, title, info, filterCheck}) => {
             marginTop={4}
             fontFamily={"Poppins"}
             fontWeight={"normal"}
+            zIndex={20}
             color={isDark ? "white" : "#828282"}
           >
             {info}
